@@ -1,6 +1,25 @@
+*{
+    padding: 0.45ch;
+   
+}
+
 #contacto{
-    background-color: #eb3434;
+    background: greenyellow;
     width: 100%;
     float: left;
+}
+
+#redes{
+    background: greenyellow;
+    float: right;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+#login{
+    float: right;
 }
 
