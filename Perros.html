@@ -107,203 +107,278 @@
 
       </div>
     </div>
+  </div>
     <!--fin menu-->
 
    
 <!-- Catalogo-->
 
 <div class="title-p2"><h1>Perro</h1></div>
-	
-                        </div>
-                    </div>
+                    
+<div class="container product-content">
+        <div class="row">
+          <!-- Sidebar -->
+          <div class="col-12 col-md-3 sidebar">
+            <div class="box-sidebar">
+                <div class="title-filter d-none d-md-block">
+                    FILTRAR POR
                 </div>
-            </div>
-
-            <!-- Componente -->
-            
-
-                
-                <div id="cajaProductos">
-                     
-<h1></h1>
-<form action="https://pyk.cl/" method="post" enctype="multipart/form-data" name="adminForm" id="adminForm" >
-    
-    <div class="container product-content">
-        <div class="row no-gutters ">
-
-            <!-- Sidebar -->
-            <div class="col-12 col-md-3 sidebar">
-                <div class="box-sidebar">
-                    <div class="title-filter d-none d-md-block">
-                        FILTRAR POR
-                    </div>
-                    <div class="col-12 col-md-12 d-none d-sm-none d-md-block bloque-filtros">
-                        <input type="button" value="LIMPIAR" class="inputbox btn-filtro" onclick="limpiarFiltros()" />
-                        <input type="button" value="FILTRAR" class="inputbox btn-filtro" onclick="filtrar()" />
-                    </div>
+                <div class="col-12 col-md-12 d-none d-sm-none d-md-block bloque-filtros">
+                  <input type="button" value="LIMPIAR" class="inputbox btn-filtro" onclick="limpiarFiltros()" />
+                  <input type="button" value="FILTRAR" class="inputbox btn-filtro" onclick="filtrar()" />
+                </div>
 
                     <!--Acordion--->
-                    <div class="col-12 col-md-12 box-acordion d-none d-sm-none d-md-block">
-
-                        
-                            <div class="col-12 caja-filtro">
-                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
-
-                                <!-- Tipo (específico de los Landing) -->
-                                <div class="accordion_cabecera active">
-                                    Tipo
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </div>
-                                <div class="accordion_panel active">
-                                    <p>
-                                        <ul class='filtro tipo'>
-                                            <li><input type='checkbox' name='tipo[]' id='tipo_1' value='1' class='checkbox' checked='checked' onclick='filtradoDinamico(this)' /><label for='tipo_1'>Juguetes</label>(3)</li>
-                                            <li><input type='checkbox' name='tipo[]' id='tipo_2' value='2' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_2'>Collares</label>(3)</li>
-                                            <li><input type='checkbox' name='tipo[]' id='tipo_3' value='3' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_3'>Platos</label>(3)</li>
-                                        </ul>
-                                    </p>
-                                </div>
-                                </div>
-                            </div>
+                <div class="col-12 col-md-12 box-acordion d-none d-sm-none d-md-block">
+                  <div class="col-12 caja-filtro">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+                      <!-- Tipo (específico de los Landing) -->
+                      <div class="accordion_cabecera active">
+                        Tipo
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </div>
+                      <div class="accordion_panel active">
+                        <p>
+                          <ul class='filtro tipo'>
+                            <li><input type='checkbox' name='tipo[]' id='tipo_1' value='1' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_1'>Juguetes</label>(2)</li>
+                            <li><input type='checkbox' name='tipo[]' id='tipo_2' value='2' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_2'>Collares</label>(1)</li>
+                            <li><input type='checkbox' name='tipo[]' id='tipo_3' value='3' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_3'>Platos</label>(1)</li>
+                          </ul>
+                        </p>
+                      </div>
                     </div>
+                  </div>
                 </div>
             </div>
+          </div>
 
             <!-- Listado de productos -->
-            <div class="col-12 col-md-9 box-details">
+          <div class="col-12 col-md-9 box-details">
 
-                <!-- Ordenar por... -->
-                <div class="filtros d-none d-sm-none d-md-block">
-                    <div class="row box-filter">
-
-                        <!-- Filtro Orden Por... -->
-                                                <div class="col-4 col-sm-7 box-price"> 
-                            <span class="titulo">Ordenar:</span>
-                            <select id="precio" name="precio" class="inputbox" onchange="filtrar();">
-	<option value="0">Seleccione...</option>
-	<option value="nombre ASC">Nombre: A a Z</option>
-	<option value="nombre DESC">Nombre: Z a A</option>
-	<option value="precio ASC">Precio: de menor a mayor</option>
-	<option value="precio DESC">Precio: de mayor a menor</option>
-</select>
-                        </div>
-                        
-                        <!-- Cantidad de productos -->
-                        <div class="col-5 col-sm-5 d-flex box-price">
-                            <span class="titulo">
-                                Mostrando 1-12 de 15 articulos
-                            </span>
-                        </div>
-
-                    </div>
+            <!-- Ordenar por... -->
+            <div class="filtros d-none d-sm-none d-md-block">
+              <div class="row box-filter">
+                <!-- Filtro Orden Por... -->
+                <div class="col-4 col-sm-7 box-price"> 
+                  <span class="titulo">Ordenar:</span>
+                  <select id="precio" name="precio" class="inputbox" onchange="filtrar();">
+                    <option value="0">Seleccione...</option>
+                    <option value="nombre ASC">Nombre: A a Z</option>
+                    <option value="nombre DESC">Nombre: Z a A</option>
+                    <option value="precio ASC">Precio: de menor a mayor</option>
+                    <option value="precio DESC">Precio: de mayor a menor</option>
+                  </select>
                 </div>
-<!-- Listado de productos -->
+                <!-- Cantidad de productos -->
+                <div class="col-5 col-sm-5 d-flex box-price">
+                  <span class="titulo">
+                    Mostrando 1-5 de 5 articulos
+                  </span>
+                </div>
+
+              </div>
+            </div>
+            <!-- Listado de productos -->
                     
-<!--Primer Item-->
+            <!--Primer Item-->
 
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-4">
-        <div class="item">
-            <div class="product-icon">
-                                    
-                <div class="ico-dog">
-                    <img src="Img/icon-dog.png" alt="dog" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-fluid">
-                <a href="/catalogo/producto/3892/adulto-carne-en-salsa-100g">
-                    <img src="Img/Hueso.jpg" alt="Hueso" class="img-fluid">
-                </a>
-                <div class="product-name">
-                                                   
-                                                                            
-                <div class=" box-califica " style="float:right">
-                    <div class="rating megustaHTML" id="megustaHTML3892">
-                        <span onclick="AjaxLoginRequerido('/panel-central-cliente');"><i class="fa fa-heart-o" aria-hidden="true" ></i></span>
-                                                                    
-                    </div>
-                </div>
-                                                
-                <a href="/catalogo/producto/3892/adulto-carne-en-salsa-100g">
-                                            Hueso de Plastico            </a>
-                </div>
-                    <div class="cont-producto">
-                        <div class="price">$ 14.990</div>
-                    </div>
-                            
-                    <div class="number-input">
-                        <div class="center-box">
-                            <span class="input-number-decrement" onclick="restar(3892,20)">–</span>
-                            <input class="input-number" type="text" id="cantidad_3892" value="1" readonly="readonly" >
-                            <span class="input-number-increment" onclick="sumar(3892,20)">+</span>
-                            <input type="hidden" id="variante_id_3892" value="3913" />
-                        </div>
-                            
-                                                    
-                    </div>
-                            
-                        <div class="content-agregar">
-                            <button type="button" class="btn btn-primary" onclick="agregarAlCarro(3892, 386)">
-                                <span class="fa fa-shopping-cart"></span>
-                                    AGREGAR
-                            </button>
-                                <input type="hidden" id="cantidad_3892" value="1" />
-                                <input type="hidden" id="variante_id_3892" value="3913" />
-                        </div>
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Segundo Item-->
-    <div class="row">
-        <div class="col-4">
-            <div class="item">
-                <div class="product-icon">
-                    <div class="ico-dog">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-4">
+                  <div class="item">
+                    <div class="product-icon">
+                      <div class="ico-dog">
                         <img src="Img/icon-dog.png" alt="dog" class="img-fluid">
+                      </div>
                     </div>
-                </div>
-                <div class="col-fluid">
-                    <a href="/catalogo/producto/5605/cordero-y-patatas-con-arandano-125-gr">
-                        <img src="Img/dental-toy.jpg" alt="Dental-Toy" class="img-fluid">
-                    </a>
-                <div class="product-name">
-                                <!-- Tu Megusta -->
-                    <div class=" box-califica " style="float:right">
-                        <div class="rating megustaHTML" id="megustaHTML5605">
+                    <div class="col-fluid">
+                      <a href="/catalogo/producto/3892/adulto-carne-en-salsa-100g">
+                        <img src="Img/Hueso.jpg" alt="Hueso" class="img-fluid">
+                      </a>
+                      <div class="product-name">
+                                                            
+                                                                                      
+                        <div class=" box-califica " style="float:right">
+                          <div class="rating megustaHTML" id="megustaHTML3892">
                             <span onclick="AjaxLoginRequerido('/panel-central-cliente');"><i class="fa fa-heart-o" aria-hidden="true" ></i></span>
+                          </div>
                         </div>
+                                                          
+                          <a href="/catalogo/producto/3892/adulto-carne-en-salsa-100g">Hueso de Plastico</a>
+                      </div>
+                        <div class="cont-producto">
+                          <div class="price">$ 14.990</div>
+                        </div>
+                          <div class="number-input">
+                            <div class="center-box">
+                              <span class="input-number-decrement" onclick="restar(3892,20)">–</span>
+                              <input class="input-number" type="text" id="cantidad_3892" value="0" readonly="readonly" >
+                              <span class="input-number-increment" onclick="sumar(3892,20)">+</span>
+                              <input type="hidden" id="variante_id_3892" value="3913" />
+                            </div>
+                          </div>
+                          <div class="content-agregar">
+                            <button type="button" class="btn btn-primary" onclick="agregarAlCarro(3892, 386)">
+                              <span class="fa fa-shopping-cart"></span>
+                                AGREGAR
+                            </button>
+                            <input type="hidden" id="cantidad_3892" value="1" />
+                            <input type="hidden" id="variante_id_3892" value="3913" />
+                          </div>
                     </div>
-                            <!-- fin me gusta -->
-                    <a href="/catalogo/producto/5605/cordero-y-patatas-con-arandano-125-gr">
-                        Dental Toy            </a>
+                  </div>
                 </div>
-                <div class="cont-producto">
-                    <div class="price">$ 9.990</div>
-                </div>
+              </div>
 
-                <div class="number-input">
-                    <div class="center-box">
-                        <span class="input-number-decrement">–</span>
-                        <input class="input-number" type="text" id="cantidad_5605" value="0" disabled>
-                        <span class="input-number-increment">+</span>
+              <!--Segundo Item-->
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-4">
+                  <div class="item">
+                    <div class="product-icon">
+                      <div class="ico-dog">
+                        <img src="Img/icon-dog.png" alt="dog" class="img-fluid">
+                      </div>
                     </div>
+                    <div class="col-fluid">
+                      <a href="/catalogo/producto/5605/cordero-y-patatas-con-arandano-125-gr">
+                        <img src="Img/dental-toy.jpg" alt="Dental-Toy" class="img-fluid">
+                      </a>
+                      <div class="product-name">
+                                          <!-- Tu Megusta -->
+                        <div class=" box-califica " style="float:right">
+                          <div class="rating megustaHTML" id="megustaHTML5605">
+                            <span onclick="AjaxLoginRequerido('/panel-central-cliente');"><i class="fa fa-heart-o" aria-hidden="true" ></i></span>
+                          </div>
+                        </div>
+                                      <!-- fin me gusta -->
+                        <a href="/catalogo/producto/5605/cordero-y-patatas-con-arandano-125-gr">Dental Toy</a>
+                      </div>
+                      <div class="cont-producto">
+                        <div class="price">$ 9.990</div>
+                      </div>
+                      <div class="number-input">
+                        <div class="center-box">
+                          <span class="input-number-decrement">–</span>
+                          <input class="input-number" type="text" id="cantidad_5605" value="0" disabled>
+                          <span class="input-number-increment">+</span>
+                        </div>
+                      </div>
+                      <div class="content-agregar">
+                        <button type="button" class="btn btn-primary" onclick="agregarAlCarro(3892, 386)">
+                          <span class="fa fa-shopping-cart"></span>
+                          AGREGAR
+                        </button>
+                          <input type="hidden" id="cantidad_5605" value="1" />
+                          <input type="hidden" id="variante_id_5605" value="3913" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="content-agregar">
-                    <button type="button" class="btn btn-primary" onclick="agregarAlCarro(3892, 386)">
-                        <span class="fa fa-shopping-cart"></span>
-                            AGREGAR
-                    </button>
-                        <input type="hidden" id="cantidad_5605" value="2" />
-                        <input type="hidden" id="variante_id_5605" value="3913" />
+              </div>
+              <!-- Tercer item-->
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-4">
+                  <div class="item">
+                    <div class="product-icon">
+                      <div class="ico-dog">
+                        <img src="Img/icon-dog.png" alt="dog" class="img-fluid">
+                      </div>
+                    </div>
+                    <div class="col-fluid">
+                      <a href="/catalogo/producto/5605/cordero-y-patatas-con-arandano-125-gr">
+                        <img src="Img/Collar.jpg" alt="Collar" class="img-fluid">
+                      </a>
+                      <div class="product-name">
+                                          <!-- Tu Megusta -->
+                        <div class=" box-califica " style="float:right">
+                          <div class="rating megustaHTML" id="megustaHTML5605">
+                            <span onclick="AjaxLoginRequerido('/panel-central-cliente');"><i class="fa fa-heart-o" aria-hidden="true" ></i></span>
+                          </div>
+                        </div>
+                                      <!-- fin me gusta -->
+                        <a href="/catalogo/producto/5605/cordero-y-patatas-con-arandano-125-gr">Collar Clasico</a>
+                      </div>
+                      <div class="cont-producto">
+                        <div class="price">$ 5.990</div>
+                      </div>
+                      <div class="number-input">
+                        <div class="center-box">
+                          <span class="input-number-decrement">–</span>
+                          <input class="input-number" type="text" id="cantidad_5605" value="0" disabled>
+                          <span class="input-number-increment">+</span>
+                        </div>
+                      </div>
+                      <div class="content-agregar">
+                        <button type="button" class="btn btn-primary" onclick="agregarAlCarro(3892, 386)">
+                          <span class="fa fa-shopping-cart"></span>
+                          AGREGAR
+                        </button>
+                          <input type="hidden" id="cantidad_5605" value="2" />
+                          <input type="hidden" id="variante_id_5605" value="3913" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <!--Cuarto Item-->
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-4">
+                  <div class="item">
+                    <div class="product-icon">
+                      <div class="ico-dog">
+                        <img src="Img/icon-dog.png" alt="dog" class="img-fluid">
+                      </div>
+                    </div>
+                    <div class="col-fluid">
+                      <a href="/catalogo/producto/5605/cordero-y-patatas-con-arandano-125-gr">
+                        <img src="Img/Plato.jpg" alt="Plato" class="img-fluid">
+                      </a>
+                      <div class="product-name">
+                                          <!-- Tu Megusta -->
+                        <div class=" box-califica " style="float:right">
+                          <div class="rating megustaHTML" id="megustaHTML5605">
+                            <span onclick="AjaxLoginRequerido('/panel-central-cliente');"><i class="fa fa-heart-o" aria-hidden="true" ></i></span>
+                          </div>
+                        </div>
+                                      <!-- fin me gusta -->
+                        <a href="/catalogo/producto/5605/cordero-y-patatas-con-arandano-125-gr">Plato Personalizado</a>
+                      </div>
+                      <div class="cont-producto">
+                        <div class="price">$ 8.990</div>
+                      </div>
+                      <div class="number-input">
+                        <div class="center-box">
+                          <span class="input-number-decrement">–</span>
+                          <input class="input-number" type="text" id="cantidad_5605" value="0" disabled>
+                          <span class="input-number-increment">+</span>
+                        </div>
+                      </div>
+                      <div class="content-agregar">
+                        <button type="button" class="btn btn-primary" onclick="agregarAlCarro(3892, 386)">
+                          <span class="fa fa-shopping-cart"></span>
+                          AGREGAR
+                        </button>
+                          <input type="hidden" id="cantidad_5605" value="3" />
+                          <input type="hidden" id="variante_id_5605" value="3913" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
             </div>
-            </div>
+          </div>  
         </div>
-    </div>
 </div>
 </body>
 </html>
