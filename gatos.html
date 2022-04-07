@@ -103,45 +103,46 @@
     </div>
     <!--fin menu-->
 
-<!-- Catalogo-->
-<div class="title-p2"><h1>Gatos</h1></div>   
-    <div class="container product-content">
-        <div class="row">
-          <!-- Sidebar -->
-          <div class="col-12 col-md-3 sidebar">
-            <div class="box-sidebar">
-                <div class="title-filter d-none d-md-block">
-                    FILTRAR POR
-                </div>
-                <div class="col-12 col-md-12 d-none d-sm-none d-md-block bloque-filtros">
-                  <input type="button" value="LIMPIAR" class="inputbox btn-filtro" onclick="limpiarFiltros()" />
-                  <input type="button" value="FILTRAR" class="inputbox btn-filtro" onclick="filtrar()" />
-                </div>
+  <!-- Catalogo-->
+  <div class="title-p2"><h1>Gatos</h1></div>   
+      <div class="container product-content">
+        
+          <div class="row">
+            <!-- Sidebar -->
+            <div class="col-12 col-md-3 sidebar">
+              <div class="box-sidebar">
+                  <div class="title-filter d-none d-md-block">
+                      FILTRAR POR
+                  </div>
+                  <div class="col-12 col-md-12 d-none d-sm-none d-md-block bloque-filtros">
+                    <input type="button" value="LIMPIAR" class="inputbox btn-filtro" onclick="limpiarFiltros()" />
+                    <input type="button" value="FILTRAR" class="inputbox btn-filtro" onclick="filtrar()" />
+                  </div>
 
-                    <!--Acordion--->
-                <div class="col-12 col-md-12 box-acordion d-none d-sm-none d-md-block">
-                  <div class="col-12 caja-filtro">
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
-                      <!-- Tipo (específico de los Landing) -->
-                      <div class="accordion_cabecera active">
-                        Tipo
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </div>
-                      <div class="accordion_panel active">
-                        <p>
-                          <ul class='filtro tipo'>
-                            <li><input type='checkbox' name='tipo[]' id='tipo_1' value='1' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_1'>Juguetes</label>(2)</li>
-                            <li><input type='checkbox' name='tipo[]' id='tipo_2' value='2' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_2'>Collares</label>(1)</li>
-                            <li><input type='checkbox' name='tipo[]' id='tipo_3' value='3' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_3'>Platos</label>(1)</li>
-                          </ul>
-                        </p>
+                      <!--Acordion--->
+                  <div class="col-12 col-md-12 box-acordion d-none d-sm-none d-md-block">
+                    <div class="col-12 caja-filtro">
+                      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+                        <!-- Tipo (específico de los Landing) -->
+                        <div class="accordion_cabecera active">
+                          Tipo
+                          <i class="fa fa-minus" aria-hidden="true"></i>
+                          <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                        <div class="accordion_panel active">
+                          <p>
+                            <ul class='filtro tipo'>
+                              <li><input type='checkbox' name='tipo[]' id='tipo_1' value='1' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_1'>Juguetes</label>(2)</li>
+                              <li><input type='checkbox' name='tipo[]' id='tipo_2' value='2' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_2'>Collares</label>(1)</li>
+                              <li><input type='checkbox' name='tipo[]' id='tipo_3' value='3' class='checkbox'  onclick='filtradoDinamico(this)' /><label for='tipo_3'>Platos</label>(1)</li>
+                            </ul>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+              </div>
             </div>
-          </div>
 
             <!-- Listado de productos -->
           <div class="col-12 col-md-9 box-details">
@@ -172,7 +173,8 @@
             <!-- Listado de productos -->
            </div>
         </div>
-    </div>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+  </div>
+  </body>
 </html>
