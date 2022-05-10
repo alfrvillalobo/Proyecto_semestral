@@ -10,6 +10,8 @@
     <link href="Estilos.css" type="text/css" rel="stylesheet">
     <link href="Img/Icon.png" rel="icon">
     <link href="Img/Icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/validationEngine.jquery.min.css" integrity="sha512-fvBUZJJBrJrzrFYM/EN2isPokoNnx331y30ZXIxRRlop1aq6rT6d8oY6WJVsiXZoso0dIZ2nbQjtGLi6Kkxr/Q==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
@@ -107,39 +109,76 @@
         </div>
         <!--fin menu-->
     </div>   
-    <!--Inicion formulario-->
-    
-    <div class="row">
+
+    <!--Inicion formulario--> 
+      <div class ="container-fluid" style="background-color: rgb(201, 203, 199);"> 
+        <div class="row"></div>
         <div class="col">
-          <label for="exampleInputNombre1" class="form-label">Nombre completo</label>  
-          <input type="text" class="form-control" placeholder="Primer nombre" aria-label="Primer nombre">
+          <h1>A continuación ingrese sus datos</h1>
         </div>
-        <div class="col">
-          <label for="exampleInputApellido1" class="form-label">Nombre de usuario</label>  
-          <input type="text" class="form-control" placeholder="Primer apellido" aria-label="Primer apellido">
+      
+      <div class="row">
+        <div class="col-4">
+          <form action="principla.html." method="get" id="formulario">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" name="nombre" id="nombre" placeholder="ingrese nombre" class="validate[required]"
+              data-errormessage-value-missing="El nombre no puede estar en blanco" value=""/>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="nombre">Nombre usuario</label>
+              <input type="text" name="nombre usuario" id="nombre usuario" placeholder="ingrese nombre usuario" class="validate[required]"
+              data-errormessage-value-missing="EL nombre de usuario no puede estar en blanco" value=""/>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="nombre">Correo electrónico</label>
+              <input type="email" name="email" id="mail" placeholder="user@PetsFriends.com" class="validate[required,custom[email]]"
+              data-errormessage-value-missing="El correo no puede estar en blanco"
+              data-errormessage-value-missing="Formato: usuario@xmail.com" value=""/>
+            </div>
+            <br>
+            <div class="form-group">
+              <fieldset>
+                <label>
+                  <span>Contraseña: </span>
+                  <input value="karnius" class="validate[required] text-input" type="password" name="password" id="password" />
+                </label>
+                <br>
+                <label>
+                  <span>Confirmar contraseña: </span>
+                  <input value="kaniusBAD" class="validate[required,equals[password]] text-input" type="password" name="password2" id="password2" />
+                  <br/>
+                  
+                </label>
+              </fieldset>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
         </div>
       </div>
-
-      <form class="row">
-        <div class="col-12">            
-          <label for="correo">Email</label>
-          <input type="text" name="correo" placeholder="email@jujuju.cl" aria-label="Email">
-        </div>
-        <div class="form-group" >
-          <label for="password">Ingresa tu contraseña</label>                    
-          <input type="text" name="pass" id="pass" placeholder="Ingresa tu contraseña" class="col-4">
-          <br>
-          </div>
-        <div class="col">
-          <label for="inputPassword4" class="form-label">Confirmar contraseña</label>
-          <input type="Contraseña" class="form-control" placeholder="Contraseña" aria-label="inputPassword4">
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Registrar</button>
-        </div>
-      </form>
-      
+    </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js" integrity="sha512-TioVFI1HfPAFh7BGAsuCB76vIrmMroWB+yRNKnTan26OBCdpdH9DWYoTxZbjW8kCKH3QDItheAEVso5N7+w75g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/languages/jquery.validationEngine-es.min.js" integrity="sha512-GCKyaseskD91hTJv68w+ldDh2vU5iURF1/pIDyAY+Bv3MZhceURuVe3GZMgPXYUb+W41oTHz2CRrTOhkdvE6SQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery.validationEngine.min.js" integrity="sha512-MKqdT8JgKftxlK6oK4S+Hh44ivKyaPncl6qN9JZEGKJGQZJMiSoPzehLcbvd/1XMieEP1Q4A3wzzhTrvBUUcUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(()=>{
+        $("#formulario").validationEngine();
+        $("form#validacion-live input")
+            .rut({formatOn: 'keyup', validateOn: 'keyup'})
+            .on('rutInvalido', function(){ 
+                $(this).parents(".control-group").addClass("error")
+            })
+            .on('rutValido', function(){ 
+                $(this).parents(".control-group").removeClass("error")
+            });
+        });
+    </script>
 </body>
 </html>
