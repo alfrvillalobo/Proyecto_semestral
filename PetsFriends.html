@@ -139,122 +139,150 @@
     </div>
     <!--fin carrusel-->
 
-    <!--API-->
-    <div class="row">
-      <div class="col-8">
+    <!-- Menu Inferior-->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container-fluid">
+          <div class="row">
+  
+            <div class="col-4">
+              <div class="footer-info">
+                <h3>Pets Friends</h3>
+                <p>
+                  AV Siempre Viva 742 <br>
+                  Springfield, USA<br><br>
+                  <strong>Numero:</strong> +56 955566677<br>
+                  <strong>Correo:</strong> pets.friends@jujuju.cl<br>
+                </p>               
+              </div>
+            </div>
+            <div class="col-1">
 
-      </div>
-      <div class="col" >
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-        <div id="app" style="width: 500px;">
-          <v-app>
-            <v-content>
-              <v-container>
-      
-                  <v-layout >
-                    
-          <v-btn color="green" large @click="voteUp" >
-              <v-icon>thumb_up</v-icon>&nbsp; Me gusta</v-btn>
-      <v-btn color="red" large @click="voteDown" >
-              <v-icon>thumb_down</v-icon>&nbsp; No me gusta</v-btn>
-      
-                  </v-layout>
-      
-                  <v-layout row wrap>
-                      <v-flex xs12 >
-                      <v-card flat tile class="d-flex">
-                          <v-img :src="image.url" aspect-ratio="1">
-                          </v-img>
-                      </v-card>
-                      </v-flex>
-                  </v-layout>
-              </v-container>
-            </v-content>
-          </v-app>
-        </div>
+            </div>
+            <div class="col-2 footer-links">
+              <h4>General</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="PetsFriends.html">Inicio</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="nosotros.html">Nosotros</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="donacion.html">Donación</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="Perros.html">Perros</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="gatos.html">Gatos</a></li>
+              </ul>
+            </div>
+            <!--Inicio API-->
+            <div class="col-lg-2 col-md-6 footer-links">
+              <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+              <div id="app" style="width: 500px; height: 10px;">
+                <v-app>
+                  <v-content>
+                    <v-container>
+                      <v-layout >
+                        <v-btn color="green" large @click="voteUp" >
+                        <v-icon>thumb_up</v-icon>&nbsp; Me gusta</v-btn>
+                        <v-btn color="red" large @click="voteDown" >
+                        <v-icon>thumb_down</v-icon>&nbsp; No me gusta</v-btn>      
+                      </v-layout>
         
-        <script>
-          new Vue({ 
-              el: '#app',
-              vuetify: new Vuetify(),
-              data: {
-                sub_id: "User-123",
-                image:{},
-                votes:[],
-                  headers: [
-                  { text: 'date' },
-                  { text: 'image_id' },
-                  { text: 'value' },
-                  { text: 'sub_id' },
-                  { text: 'country' }
-                ],
-              },
-              created(){
-                  this.getImage();
-                  this.getVotes();
-              } ,
-              methods:{
-                  async getImage()
-                  {
-                      try{
-                          axios.defaults.headers.common['x-api-key'] = "DEMO-API-KEY" // Replace this with your API Key, as it's set to defaults it will be used from now onwards
-      
-                          let response = await axios.get('https://api.thecatapi.com/v1/images/search', { params: { limit:1, size:"full" } } ) // Ask for 1 Image, at full resolution
+                      <v-layout row wrap>
+                        <v-flex xs12 >
+                          <v-card flat tile class="d-flex">
+                            <v-img :src="image.url" aspect-ratio="1"></v-img>
+                          </v-card>
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                  </v-content>
+                </v-app>
+              </div>
+              
+              <script>
+                new Vue({ 
+                    el: '#app',
+                    vuetify: new Vuetify(),
+                    data: {
+                      sub_id: "User-123",
+                      image:{},
+                      votes:[],
+                        headers: [
+                        { text: 'date' },
+                        { text: 'image_id' },
+                        { text: 'value' },
+                        { text: 'sub_id' },
+                        { text: 'country' }
+                      ],
+                    },
+                    created(){
+                        this.getImage();
+                        this.getVotes();
+                    } ,
+                    methods:{
+                        async getImage()
+                        {
+                            try{
+                                axios.defaults.headers.common['x-api-key'] = "DEMO-API-KEY" // Replace this with your API Key, as it's set to defaults it will be used from now onwards
+            
+                                let response = await axios.get('https://api.thecatapi.com/v1/images/search', { params: { limit:1, size:"full" } } ) // Ask for 1 Image, at full resolution
+                                
+                                this.image = response.data[0] // the response is an Array, so just use the first item as the Image
+            
+                                console.log("-- Image from TheCatAPI.com")
+                                console.log("id:", this.image.id)
+                                console.log("url:", this.image.url)
+            
+                            }catch(err){
+                                console.log(err)
+                            }
+                        },
+                        async voteUp(){
+                          let body = {
+                              image_id: this.image.id,
+                              sub_id: this.sub_id,
+                              value: 1 // Voting up (you like it) so send 1
+                          }
+                          let response = await axios.post('https://api.thecatapi.com/v1/votes', body ) // Send the body to create a Vote in your Account
+                                
+                          await this.getImage();
+                          await this.getVotes();
+                        },
+                        async voteDown(){
+            
+                          let body = {
+                              image_id: this.image.id,
+                              sub_id: this.sub_id,
+                              value: 0 // Voting down (you don't like) so send 0
+                          }
+                          let response = await axios.post('https://api.thecatapi.com/v1/votes', body ) // Send the body to create a Vote in your Account
+                                
+                          await this.getImage();
+                          await this.getVotes();
+                        },
+                        async getVotes()
+                        {
+            
+                          let response = await axios.get('https://api.thecatapi.com/v1/votes', { params: { order:"DESC", limit:25 } } ) // Get the last 25 votes
                           
-                          this.image = response.data[0] // the response is an Array, so just use the first item as the Image
-      
-                          console.log("-- Image from TheCatAPI.com")
-                          console.log("id:", this.image.id)
-                          console.log("url:", this.image.url)
-      
-                      }catch(err){
-                          console.log(err)
-                      }
-                  },
-                  async voteUp(){
-                    let body = {
-                        image_id: this.image.id,
-                        sub_id: this.sub_id,
-                        value: 1 // Voting up (you like it) so send 1
+                          response.data.forEach(element => {
+                            //element.created_at = new Date(element.created_at).toString();// full time string including timezone
+                            element.created_at = new Date(element.created_at).toJSON().slice(0,10)// just use the date for now
+                          });
+            
+                          this.votes = response.data;
+                        }
                     }
-                    let response = await axios.post('https://api.thecatapi.com/v1/votes', body ) // Send the body to create a Vote in your Account
-                          
-                    await this.getImage();
-                    await this.getVotes();
-                  },
-                  async voteDown(){
-      
-                    let body = {
-                        image_id: this.image.id,
-                        sub_id: this.sub_id,
-                        value: 0 // Voting down (you don't like) so send 0
-                    }
-                    let response = await axios.post('https://api.thecatapi.com/v1/votes', body ) // Send the body to create a Vote in your Account
-                          
-                    await this.getImage();
-                    await this.getVotes();
-                  },
-                  async getVotes()
-                  {
-      
-                    let response = await axios.get('https://api.thecatapi.com/v1/votes', { params: { order:"DESC", limit:25 } } ) // Get the last 25 votes
-                    
-                    response.data.forEach(element => {
-                      //element.created_at = new Date(element.created_at).toString();// full time string including timezone
-                      element.created_at = new Date(element.created_at).toJSON().slice(0,10)// just use the date for now
-                    });
-      
-                    this.votes = response.data;
-                  }
-              }
-          })
-        </script>
+                })
+              </script>
+            </div>
+            <!--Fin Api-->
+            
+          </div>
+        </div>
       </div>
-    </div>
-    <!--Fin api-->
-
-  </div>
+      </div>
+    </footer>
+  <!--Fin Menu Inferior-->
+   
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
